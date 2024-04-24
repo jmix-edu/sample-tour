@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:maps="http://jmix.io/schema/maps/ui"
+      title="msg://imageWmsSampleView.title">
+    <layout>
+        <maps:geoMap id="map" height="100%" width="100%">
+            <maps:mapView zoom="4.5" minZoom="4.5" centerX="-95" centerY="40">
+                <maps:extent minX="-140" minY="20" maxX="-50" maxY="55"/>
+            </maps:mapView>
+            <maps:layers>
+                <maps:image>
+                    <maps:imageWmsSource url="http://localhost:8089/geoserver/nurc/wms"
+                                         serverType="GEO_SERVER">
+                        <maps:parameters>
+                            <maps:parameter name="layers" value="nurc:Img_Sample"/>
+                        </maps:parameters>
+                    </maps:imageWmsSource>
+                </maps:image>
+            </maps:layers>
+        </maps:geoMap>
+    </layout>
+</view>

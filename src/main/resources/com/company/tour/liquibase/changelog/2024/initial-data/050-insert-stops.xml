@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="tour" ignore="true">
+        <!--Big Garden Tour stops-->
+        <insert tableName="STOP">
+            <column name="ID" value="620fea93-3873-428c-b695-acb3967709a5"/>
+            <column name="NAME">
+                <![CDATA[Steigenberger
+Hotel am Kanzleramt]]>
+            </column>
+            <column name="DURATION" value="1"/>
+            <column name="LOCATION" value="POINT (13.368149758980874 52.523626768780105)"/>
+        </insert>
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="620fea93-3873-428c-b695-acb3967709a5"/>
+            <column name="TOUR_ID" value="a0f4ded8-b34b-42cd-b8c0-82a26a58b67f"/>
+        </insert>
+
+        <insert tableName="STOP">
+            <column name="ID" value="65b11fc3-a83a-4d8b-8707-5acb18f6416b"/>
+            <column name="NAME" value="Victory Column"/>
+            <column name="DURATION" value="2"/>
+            <column name="LOCATION" value="POINT (13.350045249100292 52.51452943000996)"/>
+        </insert>
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="65b11fc3-a83a-4d8b-8707-5acb18f6416b"/>
+            <column name="TOUR_ID" value="a0f4ded8-b34b-42cd-b8c0-82a26a58b67f"/>
+        </insert>
+
+        <insert tableName="STOP">
+            <column name="ID" value="c5fa54cc-d087-44a9-9fd9-54d50bec9ea7"/>
+            <column name="NAME">
+                <![CDATA[Mittelpromenade
+Tauentzienstraße]]>
+            </column>
+            <column name="DURATION" value="2"/>
+            <column name="LOCATION" value="POINT (13.341987618238013 52.50215295202491)"/>
+        </insert>
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="c5fa54cc-d087-44a9-9fd9-54d50bec9ea7"/>
+            <column name="TOUR_ID" value="a0f4ded8-b34b-42cd-b8c0-82a26a58b67f"/>
+        </insert>
+
+        <insert tableName="STOP">
+            <column name="ID" value="30153a01-0364-4c72-80e2-6e835296f1cd"/>
+            <column name="NAME">
+                <![CDATA[Kaiser Wilhelm
+Memorial Church]]>
+            </column>
+            <column name="DURATION" value="2"/>
+            <column name="LOCATION" value="POINT (13.335073465775338 52.50498570170406)"/>
+        </insert>
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="30153a01-0364-4c72-80e2-6e835296f1cd"/>
+            <column name="TOUR_ID" value="a0f4ded8-b34b-42cd-b8c0-82a26a58b67f"/>
+        </insert>
+
+        <insert tableName="STOP">
+            <column name="ID" value="9ab3f10c-04f6-4699-8417-76d55159dc45"/>
+            <column name="NAME">
+                <![CDATA[Memorial to the
+Murdered Jews of Europe]]>
+            </column>
+            <column name="DURATION" value="2"/>
+            <column name="LOCATION" value="POINT (13.380066119613877 52.514453650278256)"/>
+        </insert>
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="9ab3f10c-04f6-4699-8417-76d55159dc45"/>
+            <column name="TOUR_ID" value="a0f4ded8-b34b-42cd-b8c0-82a26a58b67f"/>
+        </insert>
+
+        <insert tableName="STOP">
+            <column name="ID" value="9a891358-92f9-4598-924d-d7203a78573a"/>
+            <column name="NAME" value="Brandenburg Gate"/>
+            <column name="DURATION" value="2"/>
+            <column name="LOCATION" value="POINT (13.377619945076939 52.516830198074686)"/>
+        </insert>
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="9a891358-92f9-4598-924d-d7203a78573a"/>
+            <column name="TOUR_ID" value="a0f4ded8-b34b-42cd-b8c0-82a26a58b67f"/>
+        </insert>
+
+        <!--Berlin center tour-->
+        <!--"Brandenburg Gate" has already inserted-->
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="9a891358-92f9-4598-924d-d7203a78573a"/>
+            <column name="TOUR_ID" value="d0d6aaa9-bdec-48b0-8f40-26e4df3014e6"/>
+        </insert>
+        <!--"Memorial to the Murdered Jews of Europe" has already inserted-->
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="9ab3f10c-04f6-4699-8417-76d55159dc45"/>
+            <column name="TOUR_ID" value="d0d6aaa9-bdec-48b0-8f40-26e4df3014e6"/>
+        </insert>
+
+        <insert tableName="STOP">
+            <column name="ID" value="c31e0cf9-7fa2-4c01-8225-6bf65c80e352"/>
+            <column name="NAME" value="Deutschlandmuseum"/>
+            <column name="DURATION" value="2"/>
+            <column name="LOCATION" value="POINT (13.378192950576786 52.50891290491302)"/>
+        </insert>
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="c31e0cf9-7fa2-4c01-8225-6bf65c80e352"/>
+            <column name="TOUR_ID" value="d0d6aaa9-bdec-48b0-8f40-26e4df3014e6"/>
+        </insert>
+
+        <insert tableName="STOP">
+            <column name="ID" value="133e1666-0a81-4828-92a4-e8a723d47e00"/>
+            <column name="NAME" value="Topography of Terror"/>
+            <column name="DURATION" value="2"/>
+            <column name="LOCATION" value="POINT (13.38249078451375 52.50724325786755)"/>
+        </insert>
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="133e1666-0a81-4828-92a4-e8a723d47e00"/>
+            <column name="TOUR_ID" value="d0d6aaa9-bdec-48b0-8f40-26e4df3014e6"/>
+        </insert>
+
+        <insert tableName="STOP">
+            <column name="ID" value="ef79e24c-7dd4-4541-98ef-58316f082d6b"/>
+            <column name="NAME" value="The Wall"/>
+            <column name="DURATION" value="2"/>
+            <column name="LOCATION" value="POINT (13.390250043636222 52.508027315669416)"/>
+        </insert>
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="ef79e24c-7dd4-4541-98ef-58316f082d6b"/>
+            <column name="TOUR_ID" value="d0d6aaa9-bdec-48b0-8f40-26e4df3014e6"/>
+        </insert>
+
+        <insert tableName="STOP">
+            <column name="ID" value="bd0ac56d-f9c3-490e-b132-f66ba308c8bd"/>
+            <column name="NAME" value="Neue Kirche"/>
+            <column name="DURATION" value="2"/>
+            <column name="LOCATION" value="POINT (13.393390635121355 52.51280087892682)"/>
+        </insert>
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="bd0ac56d-f9c3-490e-b132-f66ba308c8bd"/>
+            <column name="TOUR_ID" value="d0d6aaa9-bdec-48b0-8f40-26e4df3014e6"/>
+        </insert>
+
+        <!-- Fernsehturm tour -->
+        <insert tableName="STOP">
+            <column name="ID" value="5a94f701-b432-44b6-825d-7fc396933f98"/>
+            <column name="NAME">
+                <![CDATA[Berliner
+Fernsehturm]]>
+            </column>
+            <column name="DURATION" value="2"/>
+            <column name="LOCATION" value="POINT (13.40826124330593 52.52166094389117)"/>
+        </insert>
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="5a94f701-b432-44b6-825d-7fc396933f98"/>
+            <column name="TOUR_ID" value="c76def3e-bd0a-4737-9bc2-3ef6967aa74f"/>
+        </insert>
+
+        <insert tableName="STOP">
+            <column name="ID" value="ecbb976a-5140-4e18-a612-4f1d993095a6"/>
+            <column name="NAME">
+                <![CDATA[Berlin
+Cathedral]]>
+            </column>
+            <column name="DURATION" value="2"/>
+            <column name="LOCATION" value="POINT (13.400907314226611 52.518320231616656)"/>
+        </insert>
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="ecbb976a-5140-4e18-a612-4f1d993095a6"/>
+            <column name="TOUR_ID" value="c76def3e-bd0a-4737-9bc2-3ef6967aa74f"/>
+        </insert>
+
+        <!--"Neue Kirche" has already inserted-->
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="bd0ac56d-f9c3-490e-b132-f66ba308c8bd"/>
+            <column name="TOUR_ID" value="c76def3e-bd0a-4737-9bc2-3ef6967aa74f"/>
+        </insert>
+
+        <insert tableName="STOP">
+            <column name="ID" value="21df2bb0-839d-4f66-9022-eadda3e7ea80"/>
+            <column name="NAME">
+                <![CDATA[Berlin Congress
+Center]]>
+            </column>
+            <column name="DURATION" value="2"/>
+            <column name="LOCATION" value="POINT (13.415594180760383 52.52104387148467)"/>
+        </insert>
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="21df2bb0-839d-4f66-9022-eadda3e7ea80"/>
+            <column name="TOUR_ID" value="c76def3e-bd0a-4737-9bc2-3ef6967aa74f"/>
+        </insert>
+
+        <insert tableName="STOP">
+            <column name="ID" value="27266123-e51a-4daf-9735-b7feee5a766b"/>
+            <column name="NAME">
+                <![CDATA[Park Inn by Radisson
+Berlin Alexanderplatz]]>
+            </column>
+
+            <column name="DURATION" value="2"/>
+            <column name="LOCATION" value="POINT (13.413646396715984 52.523555734662054)"/>
+        </insert>
+        <insert tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" value="27266123-e51a-4daf-9735-b7feee5a766b"/>
+            <column name="TOUR_ID" value="c76def3e-bd0a-4737-9bc2-3ef6967aa74f"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

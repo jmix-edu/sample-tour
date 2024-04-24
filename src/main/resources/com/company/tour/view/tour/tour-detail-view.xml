@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://tourDetailView.title"
+      focusComponent="form">
+    <data>
+        <instance id="tourDc"
+                  class="com.company.tour.entity.Tour">
+            <fetchPlan extends="_base">
+                <property name="city" fetchPlan="_base"/>
+                <property name="dispatcher" fetchPlan="_base"/>
+                <property name="stops" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader/>
+            <collection id="stopsDc" property="stops"/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <actions>
+        <action id="saveAction" type="detail_saveClose"/>
+        <action id="closeAction" type="detail_close"/>
+    </actions>
+    <layout>
+        <formLayout id="form" dataContainer="tourDc">
+            <textField id="nameField" property="name"/>
+            <textField id="durationField" property="duration"/>
+            <textArea id="descriptionField" height="9.5em" property="description"/>
+            <entityPicker id="cityField" property="city">
+                <actions>
+                    <action id="entityLookup" type="entity_lookup"/>
+                    <action id="entityClear" type="entity_clear"/>
+                </actions>
+            </entityPicker>
+            <entityPicker id="dispatcherField" property="dispatcher">
+                <actions>
+                    <action id="entityLookup" type="entity_lookup"/>
+                    <action id="entityClear" type="entity_clear"/>
+                </actions>
+            </entityPicker>
+            <textField id="routeColorField" property="routeColor"/>
+        </formLayout>
+        <h4 text="msg://com.company.tour.entity/Tour.stops"/>
+        <hbox id="buttonsPanel" classNames="buttons-panel">
+            <button action="stopsDataGrid.add"/>
+            <button action="stopsDataGrid.exclude"/>
+        </hbox>
+        <dataGrid id="stopsDataGrid" dataContainer="stopsDc" width="100%" minHeight="20em">
+            <actions>
+                <action id="add" type="list_add"/>
+                <action id="exclude" type="list_exclude"/>
+            </actions>
+            <columns>
+                <column property="name"/>
+                <column property="duration"/>
+            </columns>
+        </dataGrid>
+        <hbox id="detailActions">
+            <button id="saveAndCloseBtn" action="saveAction"/>
+            <button id="closeBtn" action="closeAction"/>
+        </hbox>
+    </layout>
+</view>

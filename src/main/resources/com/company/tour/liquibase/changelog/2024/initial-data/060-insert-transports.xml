@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="tour" ignore="true">
+        <insert tableName="TRANSPORT">
+            <column name="ID" value="39e5c813-c405-424c-bf8c-6705b852e769"/>
+            <column name="NAME" value="Prevost H3-45"/>
+            <column name="TYPE_" value="10"/>
+            <column name="TOUR_ID" value="a0f4ded8-b34b-42cd-b8c0-82a26a58b67f"/>
+        </insert>
+        <insert tableName="TRANSPORT">
+            <column name="ID" value="ad1e3a69-1092-4dea-8f7e-4f9d4c48a68b"/>
+            <column name="NAME" value="Toyota Hiace"/>
+            <column name="TYPE_" value="20"/>
+            <column name="TOUR_ID" value="d0d6aaa9-bdec-48b0-8f40-26e4df3014e6"/>
+        </insert>
+        <insert tableName="TRANSPORT">
+            <column name="ID" value="89521cef-f7b7-40df-926b-2242f3493fc5"/>
+            <column name="NAME" value="Infiniti g35"/>
+            <column name="TYPE_" value="30"/>
+            <column name="TOUR_ID" value="c76def3e-bd0a-4737-9bc2-3ef6967aa74f"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

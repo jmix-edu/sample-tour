@@ -3,6 +3,22 @@
 
     <menu id="application" title="msg://com.company.tour/menu.application.title" opened="true">
         <item view="User.list" title="msg://com.company.tour.view.user/UserListView.title"/>
+        <item view="City.list" title="msg://com.company.tour.view.city/cityListView.title"/>
+        <item view="Stop.list" title="msg://com.company.tour.view.stop/stopListView.title"/>
+        <item view="Transport.list" title="msg://com.company.tour.view.transport/transportListView.title"/>
+        <item view="Tour.list" title="msg://com.company.tour.view.tour/tourListView.title"/>
+    </menu>
+
+    <menu id="map-samples" title="msg://com.company.tour/map-samples.menu.title">
+        <item view="XyzSampleView" title="msg://com.company.tour.view.sample.raster.xyzsample/xyzSampleView.title"/>
+        <item view="WmsSampleView" title="msg://com.company.tour.view.sample.raster.wmssample/wmsSampleView.title"/>
+        <item view="ImageWmsSampleView" title="msg://com.company.tour.view.sample.raster.imagewmssample/imageWmsSampleView.title"/>
+        <item view="ClusterSampleView" title="msg://com.company.tour.view.sample.cluster/clusterSampleView.title"/>
+        <item view="HeatmapSampleView" title="msg://com.company.tour.view.sample.heatmap/heatmapSampleView.title"/>
+        <item view="WgsProjectionSampleView"
+              title="msg://com.company.tour.view.sample.projection.wgsprojection/wgsProjectionSampleView.title"/>
+        <item view="ReprojectionSampleView"
+              title="msg://com.company.tour.view.sample.projection.reprojection/reprojectionSampleView.title"/>
     </menu>
 
 </menu-config>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="tour">
+        <createTable tableName="CITY">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_CITY"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LOCATION"
+                    type="varchar(100 BYTE)"/>
+            <column name="POPULATION"
+                    type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="tour">
+        <createTable tableName="CITY_DISTRICT">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_CITY_DISTRICT"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CITY_ID" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="3" author="tour">
+        <createTable tableName="STOP">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_STOP"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DURATION" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="4" author="tour">
+        <createTable tableName="TOUR">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TOUR"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DURATION" type="INT"/>
+            <column name="DESCRIPTION" type="CLOB"/>
+            <column name="ROUTE_COLOR" type="VARCHAR(255)"/>
+            <column name="CITY_ID" type="UUID"/>
+            <column name="DISPATCHER_ID" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="5" author="tour">
+        <createTable tableName="TOUR_STOP_LINK">
+            <column name="STOP_ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TOUR_STOP_LINK"/>
+            </column>
+            <column name="TOUR_ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TOUR_STOP_LINK"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="6" author="tour">
+        <createTable tableName="TRANSPORT">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TRANSPORT"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TYPE_" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TOUR_ID" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="7" author="tour">
+        <addColumn tableName="USER_">
+            <column name="AVATAR" type="VARCHAR(1024)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="8" author="tour">
+        <createIndex indexName="IDX_CITY_DISTRICT_CITY" tableName="CITY_DISTRICT">
+            <column name="CITY_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="CITY_ID" baseTableName="CITY_DISTRICT"
+                                 constraintName="FK_CITY_DISTRICT_ON_CITY" onDelete="CASCADE" referencedColumnNames="ID"
+                                 referencedTableName="CITY"/>
+    </changeSet>
+    <changeSet id="9" author="tour">
+        <createIndex indexName="IDX_TOUR_CITY" tableName="TOUR">
+            <column name="CITY_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="CITY_ID" baseTableName="TOUR" constraintName="FK_TOUR_ON_CITY"
+                                 referencedColumnNames="ID" referencedTableName="CITY"/>
+    </changeSet>
+    <changeSet id="10" author="tour">
+        <createIndex indexName="IDX_TOUR_DISPATCHER" tableName="TOUR">
+            <column name="DISPATCHER_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="DISPATCHER_ID" baseTableName="TOUR"
+                                 constraintName="FK_TOUR_ON_DISPATCHER" referencedColumnNames="ID"
+                                 referencedTableName="USER_"/>
+    </changeSet>
+    <changeSet id="11" author="tour">
+        <createIndex indexName="IDX_TRANSPORT_TOUR" tableName="TRANSPORT">
+            <column name="TOUR_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="TOUR_ID" baseTableName="TRANSPORT"
+                                 constraintName="FK_TRANSPORT_ON_TOUR" referencedColumnNames="ID"
+                                 referencedTableName="TOUR"/>
+    </changeSet>
+    <changeSet id="12" author="tour">
+        <addForeignKeyConstraint baseColumnNames="STOP_ID" baseTableName="TOUR_STOP_LINK"
+                                 constraintName="FK_TOUSTO_ON_STOP" referencedColumnNames="ID"
+                                 referencedTableName="STOP"/>
+    </changeSet>
+    <changeSet id="13" author="tour">
+        <addForeignKeyConstraint baseColumnNames="TOUR_ID" baseTableName="TOUR_STOP_LINK"
+                                 constraintName="FK_TOUSTO_ON_TOUR" referencedColumnNames="ID"
+                                 referencedTableName="TOUR"/>
+    </changeSet>
+</databaseChangeLog>

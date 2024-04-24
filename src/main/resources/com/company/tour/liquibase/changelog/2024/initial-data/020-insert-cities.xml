@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="tour" ignore="true">
+        <insert tableName="CITY">
+            <column name="ID" value="7afe3b0e-d8fd-405a-a2db-f9e29d1c8491"/>
+            <column name="NAME" value="Berlin"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="ID" value="6707d457-ec2a-4d37-9d1f-b678abffaef1"/>
+            <column name="NAME" value="St. Petersburg"/>
+            <column name="LOCATION" value="POINT (30.346505322320525 59.92645550436245)"/>
+            <column name="POPULATION" value="5582000"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="ID" value="22dbdef0-0736-4c6d-9db2-3f0bef574954"/>
+            <column name="NAME" value="Odesa"/>
+            <column name="LOCATION" value="POINT (30.732673897789272 46.46782814494281)"/>
+            <column name="POPULATION" value="993120"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="ID" value="a1538933-5096-438c-9853-fdb07dbf9325"/>
+            <column name="NAME" value="Bremen"/>
+            <column name="LOCATION" value="POINT (8.799402287999921 53.085769756748405)"/>
+            <column name="POPULATION" value="569352"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="ID" value="6159fd94-fae7-4e08-a566-f8d5429a6bb0"/>
+            <column name="NAME" value="Liverpool"/>
+            <column name="LOCATION" value="POINT (-2.985894799178555 53.40502157430092)"/>
+            <column name="POPULATION" value="496784"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="ID" value="d86b20c8-27d7-45e0-8ff2-5033591c6701"/>
+            <column name="NAME" value="Manchester"/>
+            <column name="LOCATION" value="POINT (-2.2461359662573646 53.47948758280867)"/>
+            <column name="POPULATION" value="553230"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="ID" value="e0770f2f-a0a7-45d3-91d3-994def0a937e"/>
+            <column name="NAME" value="Rennes"/>
+            <column name="LOCATION" value="POINT (-1.6798642981881284 48.113154167733356)"/>
+            <column name="POPULATION" value="215366"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="ID" value="fece2b7c-0c1c-4c21-b366-e5986643bedd"/>
+            <column name="NAME" value="Lviv"/>
+            <column name="LOCATION" value="POINT (23.983490510526146 49.83964467398302)"/>
+            <column name="POPULATION" value="721301"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="ID" value="0799d399-366f-4d33-87b4-59ce8c5d8dcf"/>
+            <column name="NAME" value="Kraków"/>
+            <column name="LOCATION" value="POINT (19.943665841018266 50.055600771174916)"/>
+            <column name="POPULATION" value="766683"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="ID" value="e786c672-cfc4-43d8-98a1-9c4de49dbe66"/>
+            <column name="NAME" value="Leipzig"/>
+            <column name="LOCATION" value="POINT (12.383320683470533 51.33694791691779)"/>
+            <column name="POPULATION" value="587857"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="ID" value="30615f89-a322-43a7-9997-398c701c1e78"/>
+            <column name="NAME" value="Frankfurt"/>
+            <column name="LOCATION" value="POINT (8.67940200370208 50.11019627310968)"/>
+            <column name="POPULATION" value="753056"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="ID" value="3ee92dab-65b2-418a-a1e7-1948bc2ad303"/>
+            <column name="NAME" value="Nuremberg"/>
+            <column name="LOCATION" value="POINT (11.070897426882434 49.44887903344042)"/>
+            <column name="POPULATION" value="518365"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="ID" value="013007aa-1dda-498e-bfd1-1dddac91033e"/>
+            <column name="NAME" value="Strasbourg"/>
+            <column name="LOCATION" value="POINT (7.740777850315501 48.57622563982049)"/>
+            <column name="POPULATION" value="277270"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="ID" value="9f1afbef-f24a-4f8d-86e4-25d4e058803b"/>
+            <column name="NAME" value="Samara"/>
+            <column name="LOCATION" value="POINT (50.17879627944895 53.21277955415101)"/>
+            <column name="POPULATION" value="1154000"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="ID" value="e0480249-1dd2-4fcf-af62-da115350511c"/>
+            <column name="NAME" value="Voronezh"/>
+            <column name="LOCATION" value="POINT (39.19852245765236 51.67127670497486)"/>
+            <column name="POPULATION" value="1073000"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="ID" value="7de3d2cc-9bae-4494-b1a9-236ad6420f3c"/>
+            <column name="NAME" value="Veliky Novgorod"/>
+            <column name="LOCATION" value="POINT (31.270299641811224 58.534230514347605)"/>
+            <column name="POPULATION" value="224286"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

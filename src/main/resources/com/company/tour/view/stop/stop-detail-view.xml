@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://stopDetailView.title"
+      focusComponent="form">
+    <data>
+        <instance id="stopDc"
+                  class="com.company.tour.entity.Stop">
+            <fetchPlan extends="_base">
+                <property name="tours" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader/>
+            <collection id="toursDc" property="tours"/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <actions>
+        <action id="saveAction" type="detail_saveClose"/>
+        <action id="closeAction" type="detail_close"/>
+    </actions>
+    <layout>
+        <formLayout id="form" dataContainer="stopDc">
+            <textField id="nameField" property="name"/>
+            <textField id="durationField" property="duration"/>
+        </formLayout>
+        <h4 text="msg://com.company.tour.entity/Stop.tours"/>
+        <hbox id="buttonsPanel" classNames="buttons-panel">
+            <button action="toursDataGrid.add"/>
+            <button action="toursDataGrid.exclude"/>
+        </hbox>
+        <dataGrid id="toursDataGrid" dataContainer="toursDc" width="100%" minHeight="20em">
+            <actions>
+                <action id="add" type="list_add"/>
+                <action id="exclude" type="list_exclude"/>
+            </actions>
+            <columns>
+                <column property="name"/>
+                <column property="duration"/>
+                <column property="description"/>
+                <column property="routeColor"/>
+            </columns>
+        </dataGrid>
+        <hbox id="detailActions">
+            <button id="saveAndCloseBtn" action="saveAction"/>
+            <button id="closeBtn" action="closeAction"/>
+        </hbox>
+    </layout>
+</view>

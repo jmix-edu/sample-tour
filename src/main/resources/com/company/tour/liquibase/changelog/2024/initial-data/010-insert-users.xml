@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="tour" ignore="true">
+        <insert tableName="USER_">
+            <column name="ID" value="52998cbd-ac1d-4fe0-9236-a9156cb3903c"/>
+            <column name="VERSION" value="1"/>
+            <column name="USERNAME" value="alex"/>
+            <column name="FIRST_NAME" value="Alex"/>
+            <column name="LAST_NAME" value="Hamilton"/>
+            <column name="PASSWORD" value="{noop}alex"/>
+            <column name="WORKSPACE_LOCATION" value="POINT (94.7265625 52.67578125)"/>
+        </insert>
+        <insert tableName="USER_">
+            <column name="ID" value="ad034bf5-cbd3-4997-9799-83c9ebd7a367"/>
+            <column name="VERSION" value="1"/>
+            <column name="USERNAME" value="alice"/>
+            <column name="FIRST_NAME" value="Alice"/>
+            <column name="LAST_NAME" value="Brown"/>
+            <column name="PASSWORD" value="{noop}alice"/>
+            <column name="WORKSPACE_LOCATION" value="POINT (230.46875 57.55859375)"/>
+        </insert>
+        <insert tableName="USER_">
+            <column name="ID" value="751ebe52-50ba-427c-9978-2336d2bd7ad8"/>
+            <column name="VERSION" value="1"/>
+            <column name="USERNAME" value="alan"/>
+            <column name="FIRST_NAME" value="Alan"/>
+            <column name="LAST_NAME" value="Smith"/>
+            <column name="PASSWORD" value="{noop}alan"/>
+            <column name="WORKSPACE_LOCATION" value="POINT (891.6015625000002 562.4414062500001)"/>
+        </insert>
+        <insert tableName="USER_">
+            <column name="ID" value="59bbc850-d985-47b7-acc9-9cade88be89c"/>
+            <column name="VERSION" value="1"/>
+            <column name="USERNAME" value="sujin"/>
+            <column name="FIRST_NAME" value="Sujin"/>
+            <column name="LAST_NAME" value="Kim"/>
+            <column name="PASSWORD" value="{noop}sujin"/>
+            <column name="WORKSPACE_LOCATION" value="POINT (762.6953125000002 576.1132812500001)"/>
+        </insert>
+        <insert tableName="USER_">
+            <column name="ID" value="4a87d9f0-3429-4283-a9fb-71a08f5d5c34"/>
+            <column name="VERSION" value="1"/>
+            <column name="USERNAME" value="mary"/>
+            <column name="FIRST_NAME" value="Mary"/>
+            <column name="LAST_NAME" value="Jones"/>
+            <column name="PASSWORD" value="{noop}mary"/>
+            <column name="WORKSPACE_LOCATION" value="POINT (927.7343750000002 141.54296875)"/>
+        </insert>
+        <insert tableName="USER_">
+            <column name="ID" value="b2b45be9-d2d3-4a1e-8e76-6dac17fe713f"/>
+            <column name="VERSION" value="1"/>
+            <column name="USERNAME" value="thomas"/>
+            <column name="FIRST_NAME" value="Thomas"/>
+            <column name="LAST_NAME" value="Anderson"/>
+            <column name="PASSWORD" value="{noop}thomas"/>
+            <column name="WORKSPACE_LOCATION" value="POINT (832.0312500000002 45.83984375)"/>
+        </insert>
+        <insert tableName="USER_">
+            <column name="ID" value="5319bd5c-17e6-46a8-a8a8-30bc222add8e"/>
+            <column name="VERSION" value="1"/>
+            <column name="USERNAME" value="paul"/>
+            <column name="FIRST_NAME" value="Paul"/>
+            <column name="LAST_NAME" value="Oskar"/>
+            <column name="PASSWORD" value="{noop}paul"/>
+            <column name="WORKSPACE_LOCATION" value="POINT (762.6953125000002 88.80859375)"/>
+        </insert>
+        <insert tableName="USER_">
+            <column name="ID" value="786870b4-038e-4620-86ec-d3bee176bb0f"/>
+            <column name="VERSION" value="1"/>
+            <column name="username" value="linda"/>
+            <column name="FIRST_NAME" value="Linda"/>
+            <column name="LAST_NAME" value="Evans"/>
+            <column name="PASSWORD" value="{noop}linda"/>
+            <column name="WORKSPACE_LOCATION" value="POINT (567.3828125 220.64453125000006)"/>
+        </insert>
+        <insert tableName="USER_">
+            <column name="ID" value="46249b53-b304-44a9-85c8-0330f17a6e10"/>
+            <column name="VERSION" value="1"/>
+            <column name="username" value="susan"/>
+            <column name="FIRST_NAME" value="Susan"/>
+            <column name="LAST_NAME" value="Baker"/>
+            <column name="PASSWORD" value="{noop}susan"/>
+            <column name="WORKSPACE_LOCATION" value="POINT (576.171875 41.93359375)"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

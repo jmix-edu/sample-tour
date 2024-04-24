@@ -18,6 +18,16 @@ repositories {
     maven {
         url 'https://nexus.jmix.io/repository/public'
     }
+    maven {
+        url = 'https://nexus.jmix.io/repository/premium'
+        credentials {
+            username = rootProject['premiumRepoUser']
+            password = rootProject['premiumRepoPass']
+        }
+    }
+    maven {
+        url 'https://repo.osgeo.org/repository/release'
+    }
 }
 
 // Temporarily exclude copilot
@@ -48,6 +58,18 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
     testImplementation 'io.jmix.flowui:jmix-flowui-test-assist'
+
+    // Maps add-on
+    implementation 'io.jmix.maps:jmix-maps-flowui-starter'
+    implementation 'io.jmix.maps:jmix-maps-starter'
+
+    // Dependencies for coordinates conversion
+    implementation 'org.geotools:gt-main:30.2'
+    implementation 'org.geotools:gt-referencing:30.2'
+    configurations {
+        implementation.exclude(group: 'javax.media', module: 'jai_core')
+    }
+    implementation 'javax.media.jai:com.springsource.javax.media.jai.core'
 }
 
 test {

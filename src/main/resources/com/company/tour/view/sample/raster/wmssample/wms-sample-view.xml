@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:maps="http://jmix.io/schema/maps/ui"
+      title="msg://wmsSampleView.title">
+    <layout>
+        <maps:geoMap id="map"
+                     height="100%"
+                     width="100%">
+            <maps:layers>
+                <maps:tile>
+                    <maps:tileWmsSource url="http://localhost:8089/geoserver/tutorial/wms"
+                                        serverType="GEO_SERVER">
+                        <maps:parameters>
+                            <maps:parameter name="layers" value="tutorial:countries"/>
+                        </maps:parameters>
+                    </maps:tileWmsSource>
+                </maps:tile>
+            </maps:layers>
+        </maps:geoMap>
+    </layout>
+</view>

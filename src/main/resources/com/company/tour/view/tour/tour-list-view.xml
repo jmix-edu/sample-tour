@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:c="http://jmix.io/schema/flowui/jpql-condition"
+      title="msg://tourListView.title"
+      focusComponent="toursDataGrid">
+    <data>
+        <collection id="toursDc"
+                    class="com.company.tour.entity.Tour">
+            <fetchPlan extends="_base">
+                <property name="city" fetchPlan="_base"/>
+                <property name="dispatcher" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="toursDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from Tour e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <urlQueryParameters>
+            <genericFilter component="genericFilter"/>
+            <pagination component="pagination"/>
+        </urlQueryParameters>
+    </facets>
+    <actions>
+        <action id="selectAction" type="lookup_select"/>
+        <action id="discardAction" type="lookup_discard"/>
+    </actions>
+    <layout>
+        <genericFilter id="genericFilter"
+                       dataLoader="toursDl">
+            <properties include=".*"/>
+        </genericFilter>
+        <hbox id="buttonsPanel" classNames="buttons-panel">
+            <button id="createBtn" action="toursDataGrid.create"/>
+            <button id="editBtn" action="toursDataGrid.edit"/>
+            <button id="removeBtn" action="toursDataGrid.remove"/>
+            <simplePagination id="pagination" dataLoader="toursDl"/>
+        </hbox>
+        <dataGrid id="toursDataGrid"
+                  width="100%"
+                  minHeight="20em"
+                  dataContainer="toursDc"
+                  columnReorderingAllowed="true">
+            <actions>
+                <action id="create" type="list_create"/>
+                <action id="edit" type="list_edit"/>
+                <action id="remove" type="list_remove"/>
+            </actions>
+            <columns resizable="true">
+                <column property="name"/>
+                <column property="duration"/>
+                <column property="description"/>
+                <column property="city"/>
+                <column property="dispatcher"/>
+                <column property="routeColor"/>
+            </columns>
+        </dataGrid>
+        <hbox id="lookupActions" visible="false">
+            <button id="selectBtn" action="selectAction"/>
+            <button id="discardBtn" action="discardAction"/>
+        </hbox>
+    </layout>
+</view>

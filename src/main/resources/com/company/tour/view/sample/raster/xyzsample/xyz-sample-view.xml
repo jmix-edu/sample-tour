@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:maps="http://jmix.io/schema/maps/ui"
+      title="msg://xyzSampleView.title">
+    <layout>
+        <maps:geoMap id="map" width="100%" height="100%">
+            <maps:layers>
+                <maps:tile>
+                    <maps:xyzSource wrapX="false"
+                                    url="http://localhost:8089/geoserver/gwc/service/tms/1.0.0/ne:world@png/{z}/{x}/{-y}.png"/>
+                </maps:tile>
+            </maps:layers>
+        </maps:geoMap>
+    </layout>
+</view>
