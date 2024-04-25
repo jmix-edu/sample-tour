@@ -23,6 +23,12 @@
         <formLayout id="form" dataContainer="stopDc">
             <textField id="nameField" property="name"/>
             <textField id="durationField" property="duration"/>
+            <textField id="locationField" property="location">
+                <suffix>
+                    <button id="locationLookupBtn" icon="vaadin:map-marker" classNames="text-primary"/>
+                </suffix>
+            </textField>
+            <textField id="location3035Field" property="location3035" readOnly="true"/>
         </formLayout>
         <h4 text="msg://com.company.tour.entity/Stop.tours"/>
         <hbox id="buttonsPanel" classNames="buttons-panel">

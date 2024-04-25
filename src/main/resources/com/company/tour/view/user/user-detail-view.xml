@@ -32,6 +32,7 @@
             <textField id="emailField" property="email"/>
             <comboBox id="timeZoneField" property="timeZoneId"/>
             <checkbox id="activeField" property="active"/>
+            <textField id="workspaceLocationField" property="workspaceLocation"/>
         </formLayout>
         <hbox id="detailActions">
             <button id="saveAndCloseBtn" action="saveAction"/>

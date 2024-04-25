@@ -3,13 +3,20 @@
       xmlns:maps="http://jmix.io/schema/maps/ui"
       title="msg://clusterSampleView.title">
     <layout>
+        <hbox>
+            <button id="disableAtZoomBtn" text="Disable at zoom"/>
+            <button id="distanceBtn" text="Set distance"/>
+            <button id="showSinglePointAsClusterBtn" text="Show single point as cluster"/>
+        </hbox>
         <maps:geoMap id="map" width="100%" height="100%">
             <maps:layers>
                 <maps:tile>
                     <maps:osmSource/>
                 </maps:tile>
                 <maps:vector id="vector">
-                    <maps:vectorSource id="source"/>
+                    <maps:cluster id="cluster" weightProperty="weight">
+                        <maps:vectorSource id="source"/>
+                    </maps:cluster>
                 </maps:vector>
             </maps:layers>
         </maps:geoMap>

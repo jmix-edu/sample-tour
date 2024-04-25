@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view" xmlns:maps="http://jmix.io/schema/maps/ui"
+      title="msg://osmSampleView.title">
+    <layout>
+        <maps:geoMap id="map" height="100%" width="100%">
+            <maps:layers>
+                <maps:tile>
+                    <maps:osmSource attributions="Jmix application OpenStreetMap" cacheSize="200" wrapX="false"/>
+                </maps:tile>
+            </maps:layers>
+        </maps:geoMap>
+    </layout>
+</view>

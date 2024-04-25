@@ -42,7 +42,8 @@ public final class HeatmapUtils {
 
     private static void populateFeatures(List<JsonFeatures.JsonFeature> jsonFeatures) {
         features.addAll(jsonFeatures.stream()
-                .map(json -> new PointFeature(createGeometry(json)))
+                .map(json -> new PointFeature(createGeometry(json))
+                        .withProperty("intensity", calculateIntensity(json)))
                 .toList());
     }
 

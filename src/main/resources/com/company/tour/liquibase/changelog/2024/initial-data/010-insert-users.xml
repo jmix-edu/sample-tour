@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
         objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
-    <changeSet id="1" author="tour" ignore="true">
+    <changeSet id="1" author="tour" ignore="false">
         <insert tableName="USER_">
             <column name="ID" value="52998cbd-ac1d-4fe0-9236-a9156cb3903c"/>
             <column name="VERSION" value="1"/>

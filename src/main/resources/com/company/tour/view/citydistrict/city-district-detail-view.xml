@@ -27,6 +27,8 @@
                     <action id="entityClear" type="entity_clear"/>
                 </actions>
             </entityPicker>
+            <textField id="areaField" property="area"/>
+            <textField id="area3035Field" property="area3035" readOnly="true"/>
         </formLayout>
         <hbox id="detailActions">
             <button id="saveAndCloseBtn" action="saveAction"/>

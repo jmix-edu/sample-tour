@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
         objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
-    <changeSet id="1" author="tour" ignore="true">
+    <changeSet id="1" author="tour" ignore="false">
         <insert tableName="CITY_DISTRICT">
             <column name="ID" value="b11e394f-691e-4c8d-b5c7-504ba995d568"/>
             <column name="NAME" value="Berlin Lichtenberg"/>

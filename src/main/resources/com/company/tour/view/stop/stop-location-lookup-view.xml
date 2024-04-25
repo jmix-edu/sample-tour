@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view" xmlns:maps="http://jmix.io/schema/maps/ui"
+      title="msg://stopLocationLookupView.title">
+    <data>
+        <instance id="stopDc"
+                  class="com.company.tour.entity.Stop">
+            <fetchPlan extends="_base">
+                <property name="tours" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader/>
+            <collection id="toursDc" property="tours"/>
+        </instance>
+    </data>
+    <actions>
+        <action id="close" type="view_close" text="Ckise" icon="vaadin:check"/>
+    </actions>
+    <layout>
+        <textField dataContainer="stopDc" property="location" width="30em"/>
+        <maps:geoMap id="map" height="100%" width="100%">
+            <maps:mapView zoom="11" centerX="13.41" centerY="52.51"/>
+            <maps:layers>
+                <maps:tile>
+                    <maps:osmSource/>
+                </maps:tile>
+                <maps:vector>
+                    <maps:dataVectorSource dataContainer="stopDc" property="location"/>
+                </maps:vector>
+            </maps:layers>
+        </maps:geoMap>
+        <hbox>
+            <button id="closeBtn" action="close"/>
+        </hbox>
+    </layout>
+</view>

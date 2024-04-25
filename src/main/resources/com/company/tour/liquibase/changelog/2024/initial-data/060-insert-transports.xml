@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
         objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
-    <changeSet id="1" author="tour" ignore="true">
+    <changeSet id="1" author="tour" ignore="false">
         <insert tableName="TRANSPORT">
             <column name="ID" value="39e5c813-c405-424c-bf8c-6705b852e769"/>
             <column name="NAME" value="Prevost H3-45"/>

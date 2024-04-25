@@ -56,6 +56,8 @@
                 <column property="city"/>
                 <column property="dispatcher"/>
                 <column property="routeColor"/>
+                <column property="route"/>
+                <column property="route3035"/>
             </columns>
         </dataGrid>
         <hbox id="lookupActions" visible="false">

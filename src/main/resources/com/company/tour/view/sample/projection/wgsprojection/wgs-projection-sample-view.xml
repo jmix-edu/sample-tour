@@ -4,6 +4,7 @@
       title="msg://wgsProjectionSampleView.title">
     <layout>
         <maps:geoMap id="map" width="100%" height="100%">
+            <maps:mapView projection="EPSG:4326"/>
             <maps:layers>
                 <maps:tile>
                     <maps:osmSource/>

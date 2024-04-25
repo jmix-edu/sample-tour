@@ -11,6 +11,7 @@ import io.jmix.core.metamodel.annotation.JmixEntity;
 import io.jmix.security.authentication.JmixUserDetails;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import org.locationtech.jts.geom.Point;
 import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
@@ -23,7 +24,6 @@ import java.util.UUID;
         @Index(name = "IDX_USER__ON_USERNAME", columnList = "USERNAME", unique = true)
 })
 public class User implements JmixUserDetails, HasTimeZone {
-
     @Id
     @Column(name = "ID", nullable = false)
     @JmixGeneratedValue
@@ -60,8 +60,19 @@ public class User implements JmixUserDetails, HasTimeZone {
     @Column(name = "AVATAR", length = 1024)
     private FileRef avatar;
 
+    @Column(name = "WORKSPACE_LOCATION")
+    private Point workspaceLocation;
+
     @Transient
     protected Collection<? extends GrantedAuthority> authorities;
+
+    public Point getWorkspaceLocation() {
+        return workspaceLocation;
+    }
+
+    public void setWorkspaceLocation(Point workspaceLocation) {
+        this.workspaceLocation = workspaceLocation;
+    }
 
     public FileRef getAvatar() {
         return avatar;

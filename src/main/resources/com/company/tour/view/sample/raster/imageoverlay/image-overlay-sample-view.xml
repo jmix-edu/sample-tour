@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view" xmlns:maps="http://jmix.io/schema/maps/ui"
+      title="msg://imageOverlaySampleView.title">
+    <layout>
+        <maps:geoMap id="map" width="100%" height="100%">
+            <maps:mapView zoom="4" centerX="-95" centerY="37"/>
+            <maps:layers>
+                <maps:tile>
+                    <maps:osmSource/>
+                </maps:tile>
+                <maps:image>
+                    <maps:imageWmsSource url="http://localhost:8089/geoserver/topp/wms"
+                                         ratio="1"
+                                         serverType="GEO_SERVER">
+                        <maps:parameters>
+                            <maps:parameter name="LAYERS" value="topp:states"/>
+                        </maps:parameters>
+                    </maps:imageWmsSource>
+                    <maps:extent minX="-124.43" minY="24.57" maxX="-66.58" maxY="49.22"/>
+                </maps:image>
+            </maps:layers>
+        </maps:geoMap>
+    </layout>
+</view>

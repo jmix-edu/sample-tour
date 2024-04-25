@@ -3,8 +3,10 @@ package com.company.tour.entity;
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
 import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
+import io.jmix.core.metamodel.annotation.JmixProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import org.locationtech.jts.geom.Point;
 
 import java.util.UUID;
 
@@ -27,9 +29,22 @@ public class Transport {
     @Column(name = "TYPE_", nullable = false)
     @NotNull
     private Integer type;
+
     @JoinColumn(name = "TOUR_ID")
     @ManyToOne(fetch = FetchType.LAZY)
     private Tour tour;
+
+    @JmixProperty
+    @Transient
+    private Point location3035;
+
+    public Point getLocation3035() {
+        return location3035;
+    }
+
+    public void setLocation3035(Point location3035) {
+        this.location3035 = location3035;
+    }
 
     public Tour getTour() {
         return tour;

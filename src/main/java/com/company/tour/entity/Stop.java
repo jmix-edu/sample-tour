@@ -1,10 +1,13 @@
 package com.company.tour.entity;
 
+import com.company.tour.app.GeometryConverter;
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
 import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
+import io.jmix.core.metamodel.annotation.JmixProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import org.locationtech.jts.geom.Point;
 
 import java.util.List;
 import java.util.UUID;
@@ -25,11 +28,37 @@ public class Stop {
 
     @Column(name = "DURATION")
     private Integer duration;
+
     @JoinTable(name = "TOUR_STOP_LINK",
-            joinColumns = @JoinColumn(name = "STOP_ID"),
-            inverseJoinColumns = @JoinColumn(name = "TOUR_ID"))
+            joinColumns = @JoinColumn(name = "STOP_ID", referencedColumnName = "ID"),
+            inverseJoinColumns = @JoinColumn(name = "TOUR_ID", referencedColumnName = "ID"))
     @ManyToMany
     private List<Tour> tours;
+
+    @Column(name = "LOCATION")
+    private Point location;
+
+    @JmixProperty
+    @Transient
+    private Point location3035;
+
+    public Point getLocation3035() {
+        return location3035;
+    }
+
+    public void setLocation3035(Point location3035) {
+        this.location3035 = location3035;
+    }
+
+    public Point getLocation() {
+        return location;
+    }
+
+    public void setLocation(Point location) {
+        this.location = location;
+
+        setLocation3035FromWgs(location);
+    }
 
     public List<Tour> getTours() {
         return tours;
@@ -61,5 +90,16 @@ public class Stop {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    void setLocation3035FromWgs(Point location) {
+        this.location3035 = location != null
+                ? GeometryConverter.convertFromWGS(location, GeometryConverter.CRS_3035)
+                : null;
+    }
+
+    @PostLoad
+    public void postLoad() {
+        setLocation3035FromWgs(location);
     }
 }

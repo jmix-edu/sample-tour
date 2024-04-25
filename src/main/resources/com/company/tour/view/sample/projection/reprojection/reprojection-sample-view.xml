@@ -9,7 +9,8 @@
                     <maps:osmSource/>
                 </maps:tile>
                 <maps:image>
-                    <maps:imageStaticSource url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/British_National_Grid.svg/2000px-British_National_Grid.svg.png">
+                    <maps:imageStaticSource projection="EPSG:27700"
+                                            url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/British_National_Grid.svg/2000px-British_National_Grid.svg.png">
                         <maps:imageExtent minX="0" minY="0" maxX="700000" maxY="1300000"/>
                     </maps:imageStaticSource>
                 </maps:image>

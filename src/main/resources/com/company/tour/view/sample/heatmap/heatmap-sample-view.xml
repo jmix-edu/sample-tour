@@ -2,15 +2,32 @@
 <view xmlns="http://jmix.io/schema/flowui/view"
       xmlns:maps="http://jmix.io/schema/maps/ui"
       title="msg://heatmapSampleView.title">
+
+    <data>
+        <collection id="citiesDc" class="com.company.tour.entity.City">
+            <loader id="citiesDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from City e]]>
+                </query>
+            </loader>
+            <fetchPlan extends="_base"/>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
     <layout>
         <maps:geoMap id="map" width="100%" height="100%">
             <maps:layers>
                 <maps:tile>
                     <maps:osmSource/>
                 </maps:tile>
-                <maps:vector id="vector">
+                <maps:heatmap id="heatmap" weightProperty="intensity" radius="15" blur="20">
                     <maps:vectorSource id="source"/>
-                </maps:vector>
+                </maps:heatmap>
+                <maps:heatmap id="heatmap1" radius="15" blur="20">
+                    <maps:heatmapDataVectorSource id="dataSource" dataContainer="citiesDc" property="location"/>
+                </maps:heatmap>
             </maps:layers>
         </maps:geoMap>
     </layout>
